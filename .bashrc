@@ -21,4 +21,4 @@ alias hc='hollywood'
 # Run neofetch
 # neofetch
 # Run colorscripts
-colorscript random
+# colorscript random

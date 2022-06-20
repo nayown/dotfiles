@@ -5,12 +5,13 @@ filetype on
 syntax on
 set nocompatible
 set number
+set relativenumber
 set tabstop=4
 set autoindent
 
 
-set cursorline
-set cursorcolumn
+" set cursorline
+" set cursorcolumn
 set showcmd
 set showmode
 set smartcase
