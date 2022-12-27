@@ -30,7 +30,6 @@ if [ -f "$userresources" ]; then
 
 
 
-
     xrdb -merge "$userresources"
 
 fi
@@ -48,13 +47,18 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-twm &
-xclock -geometry 50x50-1+1 &
-xterm -geometry 80x50+494+51 &
-xterm -geometry 80x20+494-0 &
-#exec xterm -geometry 80x66+0+0 -name login
-#nitrogen --restore &
-picom -f &
+xsetroot -cursor_name left_ptr
+sxhkd &
+#picom -f &
 wal -R &
-exec qtile start
+udiskie &
+dunst &
+dwmblocks &
+unclutter -idle 3 &
+export _JAVA_AWT_WM_NONREPARENTING=1
 
+while true; do
+	dwm >/dev/null 2>&1
+done
+
+exec dwm

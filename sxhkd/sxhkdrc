@@ -1,0 +1,62 @@
+# 
+# wm independent hotkeys
+#
+
+# terminal emulator
+# super + Return
+#	kitty
+
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# launch rofi
+super + shift + space
+	rofi -show drun
+# launch pcmanfm
+# super + shift + f
+#	pcmanfm
+
+# launch ranger
+super + r
+	kitty -e ranger
+
+# lockscreen
+super + x
+	betterlockscreen -l 
+
+# code
+super + c
+	code
+
+# scrot
+super + p
+	scrot 
+
+# firefox
+super + shift + x
+	firefox
+
+#
+# multimedia keys
+#
+
+# Increase volume
+XF86AudioRaiseVolume
+    amixer set Master 10%+ 1>/dev/null
+
+# Decrease volume
+XF86AudioLowerVolume
+    amixer set Master 10%- 1>/dev/null
+
+# Mute Audio
+XF86AudioMute
+    amixer -D pulse set Master 1+ toggle 1>/dev/null
+
+# Brightness Control
+XF86MonBrightnessDown
+	xbacklight -dec 20
+XF86MonBrightnessUp
+	xbacklight -inc 20
+
+
